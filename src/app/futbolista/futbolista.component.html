@@ -1,0 +1,51 @@
+<br>
+<br>
+<detalle-futbolista *ngIf="futbolistaSeleccionado" [futbolista]="futbolistaSeleccionado"></detalle-futbolista>
+
+<div class="card border-primary mb-3">
+  <div class="card-header">Listado de Futbolistas</div>
+  <div class="card-body text-primary">
+    <!--<h5 class="card-title">Listado de Futbolistas</h5>-->
+    <div *ngIf="futbolistas?.length == 0" class="alert alert-info">
+      No hay Futbolistas en la base de datos
+    </div>
+    <table class="table table-border table-striped" *ngIf="futbolistas?.length > 0">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Naciminto</th>
+        <th>Caracteristicas</th>
+        <th>Posicion</th>
+        <th>Ver futbolista por ID</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let futbolista of futbolistas">
+        <td>{{ futbolista.id }}</td>
+        <td>{{ futbolista.nombres }}</td>
+        <td>{{ futbolista.apellidos }}</td>
+        <td>{{ futbolista.fechaNacimiento }}</td>
+        <td>{{ futbolista.caracteristicas }}</td>
+        <td>{{ futbolista.posicion.posicion }}</td>
+        <td>
+          <button (click)="abrirModal(futbolista)" type="button" class="btn btn-primary">VER</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <paginator-nav *ngIf="paginador" [paginador]="paginador"></paginator-nav>
+    <!-- este selecto es el de paginator.component.ts -->
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

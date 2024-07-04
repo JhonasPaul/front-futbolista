@@ -1,0 +1,37 @@
+<div class="abrir-modal animacion fadeIn " *ngIf="modalService.modal">
+  <div *ngIf="modalService.modal" class="modal conDetalle" tabindex="-1" style="display:block;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detalle del Futbolista {{futbolista.nombres}} {{futbolista.apellidos}}</h5>
+          <button type="button" (click)="cerrarModal()" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm detalle">
+                <ul *ngIf="futbolista" class="list-group text-dark mb-3">
+                  <li class="list-group-item">ID: {{ futbolista.id }}</li>
+                  <li class="list-group-item">NOMBRES: {{ futbolista.nombres }}</li>
+                  <li class="list-group-item">APELLIDOS: {{ futbolista.apellidos }}</li>
+                  <li class="list-group-item">FECHA DE NACIMIENTO: {{ futbolista.fechaNacimiento }}</li>
+                  <li class="list-group-item">CARACTERISTICAS: {{ futbolista.caracteristicas }}</li>
+                  <li class="list-group-item">POSICION: {{ futbolista.posicion.posicion }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="cerrarModal()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- verificar el app.module.ts que detallecomponent este importado --- app.module-ts -->
+
+
+
