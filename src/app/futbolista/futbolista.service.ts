@@ -12,7 +12,7 @@ export class FutbolistaService {
 
 
   constructor(private http: HttpClient,
-              private router: Router) {
+              ) {
   }
 
   listarFutbolistas(page: number): Observable<any> {

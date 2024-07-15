@@ -8,7 +8,7 @@ import { DirectivaComponent } from './directiva/directiva.component';
 import {RouterModule, Routes} from "@angular/router";
 import { FutbolistaComponent } from './futbolista/futbolista.component';
 import { PaginatorComponent } from './paginator/paginator.component';
-import {HttpClientModule} from "@angular/common/http";
+import {provideHttpClient, withFetch} from "@angular/common/http";
 import { DetalleComponent } from './futbolista/detalle/detalle.component';
 
 const routes: Routes = [
@@ -31,10 +31,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [provideHttpClient(withFetch())],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
