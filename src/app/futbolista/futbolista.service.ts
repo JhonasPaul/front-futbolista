@@ -8,11 +8,10 @@ import {Futbolista} from "./futbolista";
   providedIn: 'root'
 })
 export class FutbolistaService {
-  private urlEndPoind: string = "http://localhost:8080/api/futbolistas"
+  private urlEndPoind: string = "http://localhost:8080/futbolistas"
 
 
-  constructor(private http: HttpClient,
-              ) {
+  constructor(private http: HttpClient,) {
   }
 
   listarFutbolistas(page: number): Observable<any> {

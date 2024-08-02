@@ -1,4 +1,5 @@
 export class Posicion {
-  id: number;
-  posicion: string;
+   id: number
+   posicion: string
+
 }

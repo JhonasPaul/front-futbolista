@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Futbolista} from "./futbolista";
 import {FutbolistaService} from "./futbolista.service";
 import {ActivatedRoute} from "@angular/router";

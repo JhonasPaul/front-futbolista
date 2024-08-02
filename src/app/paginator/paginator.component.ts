@@ -6,10 +6,10 @@ import {Component, Input, SimpleChanges} from '@angular/core';
   styleUrl: './paginator.component.css'
 })
 export class PaginatorComponent {
-  @Input() paginador: any;
-  paginas: number[];
-  desde: number;
-  hasta: number;
+  @Input() public paginador: any
+  public paginas: number[]
+  public desde: number
+  public hasta: number
 
   constructor() {
   }
