@@ -1,0 +1,42 @@
+@if (futbolistas.length == 0) {
+  <div class="alert alert-info">
+    No hay Futbolistas en la base de datos
+  </div>
+} @else {
+
+    <table class="table table-border table-striped " >
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Naciminto</th>
+        <th>Caracteristicas</th>
+        <th>Posicion</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (futbolista of futbolistas; track $index) {
+          <tr>
+            <td>
+              <button [routerLink]="['/futbolistas-detalle', futbolista.id]"  class="btn btn-primary">
+                {{ futbolista.id }}
+              </button>
+            </td>
+            <td>{{ futbolista.nombres }}</td>
+            <td>{{ futbolista.apellidos }}</td>
+            <td>{{ futbolista.fechaNacimiento }}</td>
+            <td>{{ futbolista.caracteristicas }}</td>
+            <td>
+              <button (click)="deleteById(futbolista.id)" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        }
+
+      </tbody>
+    </table>
+
+
+}
+
+<!-- <button (click)="emitIdDelete(futbolista.id)" class="btn btn-danger">Eliminar</button>-->

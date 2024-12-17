@@ -1,0 +1,11 @@
+<div class="card-body rounded shadow">
+  <div class="card mb-3">
+    <div class="card-header">Listado de Futbolistas</div>
+<app-futbolista-list [futbolistas]="futbolistas"
+
+  (inDelete)="inDelete($event)"
+
+></app-futbolista-list>
+  </div>
+</div>
+<app-futbolista-paginador *ngIf="paginador"  [paginador]="paginador" ></app-futbolista-paginador>
